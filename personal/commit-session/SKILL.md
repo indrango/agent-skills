@@ -5,7 +5,7 @@ description: "Checks current session code changes, provides commit messages, and
 
 # Commit Session
 
-Checks current session code changes, provides structured commit messages, creates feature branches, and commits following the repository's commit and branch rules.
+Checks current session code changes, provides structured commit messages, creates feature branches, and commits following Goverone commit rules from bd4-commit skill.
 
 ## Purpose
 
@@ -46,7 +46,7 @@ Verify:
 git checkout -b <branch-name>
 ```
 
-Branch naming convention:
+Branch naming convention (follow bd4-commit):
 - `feat/<domain>-<feature>`
 - `fix/<domain>-<bug>`
 - `refactor/<domain>-<area>`
@@ -76,7 +76,7 @@ For each changed file, document:
 
 ## Step 4 — Commit Message Generation
 
-Follow conventional commit format:
+Follow conventional commit format from bd4-commit:
 
 ```
 <type>(<scope>): <description under 60 chars>
@@ -109,7 +109,7 @@ git commit -m "commit-message-here"
 
 ## Step 6 — Task Completion Report
 
-Provide a completion report in this format:
+Provide completion report following bd4-commit format:
 
 ```
 ---

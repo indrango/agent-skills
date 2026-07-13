@@ -35,7 +35,7 @@ Invoke this skill when the user asks to:
 - Convert an idea into implementation-ready documentation
 - Structure a bugfix before coding
 - Create `docs/specs-v2/YYYY-MM-DD-<slug>/requirements.md`, `bugfix.md`, `design.md`, or `tasks.md`
-- Improve a specification-first workflow
+- Improve Trae workflow using a specification-first approach
 
 Do not invoke this skill for direct implementation unless the user first asks for specs or planning artifacts.
 
@@ -75,10 +75,10 @@ This skill uses separate template documents. Always read the relevant template f
 
 | Artifact to Generate | Template File | Use When |
 |---|---|---|
-| `requirements.md` | `templates/requirements.md` | New feature, UI enhancement, backend workflow, behavior-changing refactor |
-| `bugfix.md` | `templates/bugfix.md` | Defect, regression, broken flow, incorrect behavior, API mismatch |
-| `design.md` | `templates/design.md` | After `requirements.md` or `bugfix.md` exists or is drafted |
-| `tasks.md` | `templates/tasks.md` | After `design.md` exists or is drafted |
+| `requirements.md` | `.trae/skills/spec-generator/templates/requirements.md` | New feature, UI enhancement, backend workflow, behavior-changing refactor |
+| `bugfix.md` | `.trae/skills/spec-generator/templates/bugfix.md` | Defect, regression, broken flow, incorrect behavior, API mismatch |
+| `design.md` | `.trae/skills/spec-generator/templates/design.md` | After `requirements.md` or `bugfix.md` exists or is drafted |
+| `tasks.md` | `.trae/skills/spec-generator/templates/tasks.md` | After `design.md` exists or is drafted |
 
 ## Routing Rules
 
@@ -86,11 +86,11 @@ This skill uses separate template documents. Always read the relevant template f
 
 If the user asks for a new feature, UI enhancement, backend workflow, or behavior-changing refactor:
 
-1. Read `templates/requirements.md`
+1. Read `.trae/skills/spec-generator/templates/requirements.md`
 2. Generate `docs/specs-v2/YYYY-MM-DD-<slug>/requirements.md`
-3. Read `templates/design.md`
+3. Read `.trae/skills/spec-generator/templates/design.md`
 4. Generate `docs/specs-v2/YYYY-MM-DD-<slug>/design.md`
-5. Read `templates/tasks.md`
+5. Read `.trae/skills/spec-generator/templates/tasks.md`
 6. Generate `docs/specs-v2/YYYY-MM-DD-<slug>/tasks.md`
 7. Generate `docs/specs-v2/YYYY-MM-DD-<slug>/.config`
 
@@ -108,11 +108,11 @@ docs/specs-v2/YYYY-MM-DD-<slug>/
 
 If the user asks to fix a bug, regression, broken flow, incorrect behavior, or API mismatch:
 
-1. Read `templates/bugfix.md`
+1. Read `.trae/skills/spec-generator/templates/bugfix.md`
 2. Generate `docs/specs-v2/YYYY-MM-DD-<slug>/bugfix.md`
-3. Read `templates/design.md`
+3. Read `.trae/skills/spec-generator/templates/design.md`
 4. Generate `docs/specs-v2/YYYY-MM-DD-<slug>/design.md`
-5. Read `templates/tasks.md`
+5. Read `.trae/skills/spec-generator/templates/tasks.md`
 6. Generate `docs/specs-v2/YYYY-MM-DD-<slug>/tasks.md`
 7. Generate `docs/specs-v2/YYYY-MM-DD-<slug>/.config`
 
@@ -212,7 +212,7 @@ For features:
 {
   "type": "feature",
   "status": "draft",
-  "createdBy": "codex-agent",
+  "createdBy": "trae-agent",
   "phase": "tasks",
   "artifacts": {
     "requirements": true,
@@ -229,7 +229,7 @@ For bugfixes:
 {
   "type": "bugfix",
   "status": "draft",
-  "createdBy": "codex-agent",
+  "createdBy": "trae-agent",
   "phase": "tasks",
   "artifacts": {
     "requirements": false,

@@ -31,7 +31,7 @@ Collect from the user or infer from context:
 All plans are stored in:
 
 ```
-{project_root}/docs/specs-v2/
+{project_root}/docs/specs/
 ```
 
 Where `{project_root}` is the root of the current working directory. Create a new subdirectory for each plan if it doesn't exist.
@@ -42,11 +42,11 @@ Plan directory format: `{YYYY-MM-DD}-{feature-slug}/`
 
 Plan file format: `plan.md`
 
-Full path structure: `docs/specs-v2/{YYYY-MM-DD}-{feature-slug}/plan.md`
+Full path structure: `docs/specs/{YYYY-MM-DD}-{feature-slug}/plan.md`
 
 - **Timestamp**: Current date in `YYYY-MM-DD` format (e.g., `2026-05-16`)
 - **Feature slug**: kebab-case, short and descriptive (e.g., `auth-migration`, `documents-table-view`)
-- Example: `docs/specs-v2/2026-05-16-auth-migration/plan.md`
+- Example: `docs/specs/2026-05-16-auth-migration/plan.md`
 
 ## Plan Markdown Format
 
@@ -171,7 +171,7 @@ Status icons: ⬜ Not started | 🔵 In progress | ✅ Done | ⛔ Blocked | ⏭ 
 | {ISO date} | Plan created |
 ```
 
-Use the project's existing PRDs, specs, or technical design docs as the reference for the right level of specificity. Do not copy another template section-for-section blindly; adapt the rigor so the plan stays execution-oriented.
+Use `knowledge-base/api-prd-template.md` as the reference for the level of technical specificity. Do not copy it section-for-section blindly; adapt its rigor to the implementation plan so the plan remains execution-oriented.
 
 ## Execution Steps
 
@@ -185,8 +185,8 @@ Use the project's existing PRDs, specs, or technical design docs as the referenc
 
 ### Step 2: Check for duplicates
 
-- Check `docs/specs-v2/` directory for existing plans on the same topic
-- Use Glob to search: `docs/specs-v2/*{keyword}*/plan.md`
+- Check `docs/specs/` directory for existing plans on the same topic
+- Use Glob to search: `docs/specs/*{keyword}*/plan.md`
 - If a plan already exists for the same topic, **update it** rather than creating a new one
 
 ### Step 3: Produce the technical breakdown
@@ -210,7 +210,7 @@ Use the project's existing PRDs, specs, or technical design docs as the referenc
 
 ### Step 6: Write the plan file
 
-- Create directory structure: `docs/specs-v2/{YYYY-MM-DD}-{feature-slug}/`
+- Create directory structure: `docs/specs/{YYYY-MM-DD}-{feature-slug}/`
 - Write the plan file as `plan.md` in the created directory
 - Use the appropriate file editing tool to create or update the file at the correct path
 - Ensure all sections are filled in with meaningful content
