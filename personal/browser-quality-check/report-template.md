@@ -7,7 +7,6 @@
 - Target URL: <url>
 - Final URL: <url after redirects>
 - Approved Plan: <inline summary or path/reference>
-- Plan Conformance: conformant | deviations | blocked
 - Test Source: URL-only smoke check | Chat test case | Test case file: <path>
 - Browser Mode: Headed via agent-browser
 - Browser Engine: Chromium via agent-browser unless otherwise stated
@@ -21,7 +20,7 @@
 
 ## Approved Plan Baseline
 
-Summarize the approved `browser-quality-plan` or inline plan used for execution.
+Summarize the approved browser-quality-plan or inline plan used for execution.
 
 ### QA Intent
 
@@ -40,30 +39,13 @@ Summarize the approved `browser-quality-plan` or inline plan used for execution.
 
 - <explicitly skipped behavior>
 
-### Planned Safety Gates
+### Planned Evidence
 
-- Data Mutation Risk: <none/read-only/creates data/updates data/destructive confirmed>
-- Safety Gates: <submit/payment/delete/update/email/SMS/permission/irreversible gates or none>
-- Approval for Safety Gates: <approved/not approved/not applicable>
-
-### Planned Evidence and Naming
-
-- Raw Screenshot Naming: `TC-<id>-step-<nn>-<viewport>.png`
-- Annotated Screenshot Naming: `BUG-<id>-TC-<id>-step-<nn>-<viewport>.png`
-- Annotation Source Naming: `BUG-<id>-TC-<id>-step-<nn>-<viewport>.html` or `.svg`
-- Network Evidence Naming: `network.har` or `network-requests.md`
-- Recording Naming: `recording-<flow-or-finding-id>.webm`
-- Report File: `qa-report.md`
-
-## Plan Conformance and Deviations
-
-| Area | Planned | Executed | Status | Reason / Approval |
-| --- | --- | --- | --- | --- |
-| Scope | <planned scope> | <executed scope> | conformant/deviation/blocked | <reason> |
-| Viewports | <planned> | <executed> | conformant/deviation/blocked | <reason> |
-| Evidence | <planned> | <captured> | conformant/deviation/blocked | <reason> |
-| Safety Gates | <planned> | <observed> | conformant/deviation/blocked | <reason> |
-| Quality Dimensions | <planned> | <executed> | conformant/deviation/blocked | <reason> |
+- Raw Screenshots: <planned/not needed>
+- Annotated Screenshots for Failed Checks: <planned/not needed>
+- Network Evidence: <planned/not needed>
+- Console/UI Error Notes: <planned/not needed>
+- Timing Evidence: <end-to-end / per step / not measured>
 
 ## Test Inputs
 
@@ -72,38 +54,36 @@ Summarize the approved `browser-quality-plan` or inline plan used for execution.
 - Viewports/Devices: <viewport list>
 - Locale/Timezone: <locale/timezone or not specified>
 - Authentication: <not required/session/profile/user-provided/manual/blocked>
-- Feature Flags / Dependencies: <flags/services or none known>
+- Data Mutation Risk: <none/read-only/creates data/updates data/destructive confirmed>
 - Cleanup: <complete/not needed/pending>
 
-## Requirement and Risk Traceability Matrix
+## Traceability Matrix
 
-Map each planned requirement, test step, or material risk to observed validation and evidence.
-
-| ID | Requirement / Risk | Expected Result or Control | Planned Validation | Actual Validation | Duration | Evidence | Status |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| R-01 | <requirement or risk> | <expected/control> | <planned validation> | <actual validation> | <HH:MM:SS> | <screenshot/network/timing/report note> | PASS/FAIL/BLOCKED |
+| ID | Requirement / Test Step | Expected Result | Validation Performed | Duration | Evidence | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| TC-01 | <step or requirement> | <expected> | <actual validation> | <HH:MM:SS> | <screenshot/log/ref> | PASS/FAIL/BLOCKED |
 
 ## Execution Notes
 
-| Step | Traceability ID | Action | Expected | Result Criteria | Observed | Duration | Status | Evidence |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | R-01 / TC-01 | <action> | <expected> | PASS if <condition>; FAIL if <condition>; BLOCKED if <condition> | <observed> | <HH:MM:SS> | PASS/FAIL/BLOCKED | <file/ref> |
+| Step | Action | Expected | Observed | Duration | Status | Evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | <action> | <expected> | <observed> | <HH:MM:SS> | PASS/FAIL/BLOCKED | <file/ref> |
 
 ## Findings
 
-| ID | Severity | Title | Area | Traceability ID | Steps to Reproduce | Expected | Actual | Evidence | Recommendation |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| BUG-001 | Critical/High/Medium/Low/Info | <title> | <page/flow> | R-01 / TC-01 | <steps> | <expected> | <actual> | <screenshot/HAR/request> | <concise recommendation> |
+| ID | Severity | Title | Area | Steps to Reproduce | Expected | Actual | Evidence | Recommendation |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| BUG-001 | Critical/High/Medium/Low/Info | <title> | <page/flow> | <steps> | <expected> | <actual> | <screenshot/HAR/request> | <concise recommendation> |
 
 ## Annotated Screenshot Attachments
 
-Use this section for failed checks, visual defects, or UI issues. Keep the original screenshot path and include an annotated copy with red rectangles, high-contrast labels, and finding ID callouts.
+Use this section for failed checks, visual defects, or UI issues. Keep the original screenshot path and include an annotated copy with red rectangles, highlight text, and finding ID callouts.
 
 Preferred annotation method: local HTML/SVG overlay opened and captured with `agent-browser`. Fallbacks: ImageMagick `magick`, Python Pillow, or another deterministic local image annotation tool.
 
-| Finding ID | Traceability ID | Screenshot Type | Raw Screenshot | Annotation Source | Annotated Screenshot Attachment | Annotation Method | Visual Markers | Notes |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| BUG-001 | R-01 / TC-01 | Error / UI defect / Failed step | <screenshots/TC-01-step-03-desktop.png> | <screenshots/annotated/BUG-001-TC-01-step-03-desktop.html> | <screenshots/annotated/BUG-001-TC-01-step-03-desktop.png> | HTML/SVG overlay captured with agent-browser | Red rectangle around affected area; highlighted label `BUG-001` | <what the marker shows> |
+| Finding ID | Screenshot Type | Raw Screenshot | Annotation Source | Annotated Screenshot Attachment | Annotation Method | Visual Markers | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| BUG-001 | Error / UI defect / Failed step | <screenshots/TC-01-step-03-desktop.png> | <screenshots/annotated/BUG-001-TC-01-step-03-desktop.html> | <screenshots/annotated/BUG-001-TC-01-step-03-desktop.png> | HTML/SVG overlay captured with agent-browser | Red rectangle around affected area; highlighted label `BUG-001` | <what the marker shows> |
 
 ## Network and Console-Relevant Observations
 
@@ -111,7 +91,6 @@ Preferred annotation method: local HTML/SVG overlay opened and captured with `ag
 - Slow or Stuck Requests: <none/list>
 - Error States Shown in UI: <none/list>
 - Console-Relevant Notes: <none/list when available>
-- Network Evidence: <network.har/network-requests.md/not captured + reason>
 
 ## Quality Dimension Results
 
@@ -139,7 +118,6 @@ Preferred annotation method: local HTML/SVG overlay opened and captured with `ag
 - Annotation Sources / Methods: <HTML/SVG source paths, ImageMagick/Pillow command notes, or none>
 - HAR / Network Logs: <paths>
 - Recordings: <paths>
-- Console/UI Error Notes: <paths or inline notes>
 - Other Artifacts: <paths>
 
 ## Limitations
@@ -147,7 +125,6 @@ Preferred annotation method: local HTML/SVG overlay opened and captured with `ag
 - Not Executed: <coverage not executed and why>
 - Partially Executed: <partial coverage and why>
 - Blocked Evidence: <evidence unavailable and why>
-- Deviations from Plan: <deviations and approval/reason>
 - Assumptions: <assumptions used>
 
 ## Risks and Follow-Up

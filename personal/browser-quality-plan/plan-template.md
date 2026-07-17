@@ -12,73 +12,73 @@
 
 ### In Scope
 
-- <behavior, page, journey, or validation area>
+- \<behavior, page, journey, or validation area>
 
 ### Out of Scope
 
-- <explicitly skipped behavior or coverage>
+- <br />
 
 ## Preconditions, Data, and Access
 
 - Preconditions: <required state>
-- Test Data: <data, redacted if sensitive>
+- Test Data: \<data, redacted if sensitive>
 - Authentication: not required | manual | existing session | user-provided | blocked
 - Credentials/Sensitive Data Rules: redact secrets, tokens, credentials, payment data, and personal data from plan, report, screenshots, and logs.
-- Locale/Timezone: <locale/timezone or not specified>
-- Feature Flags / Dependencies: <flags/services or none known>
+- Locale/Timezone: \<locale/timezone or not specified>
+- Feature Flags / Dependencies: \<flags/services or none known>
 
 ## Viewports and Devices
 
-| Viewport / Device | Purpose | Required? |
-| --- | --- | --- |
-| Desktop 1440x900 | Baseline desktop layout and flow | Yes/No |
-| Mobile 390x844 | Responsive sanity check | Yes/No |
+| Viewport / Device | Purpose                          | Required? |
+| ----------------- | -------------------------------- | --------- |
+| Desktop 1440x900  | Baseline desktop layout and flow | Yes/No    |
+| Mobile 390x844    | Responsive sanity check          | Yes/No    |
 
 ## Essential Review Areas
 
-| Area | Why It Matters | Planned Validation | Planned Evidence |
-| --- | --- | --- | --- |
-| Page load | Ensure page reaches a usable state | Open URL and wait for stable content | Final URL, title, raw screenshot |
-| Main flow | Validate requested user path | Execute provided steps or smoke journey | Step screenshots and observations |
-| UI/Visual | Detect layout, clipping, or visible error states | Desktop/mobile visual check when applicable | Raw screenshots; annotated screenshots for issues |
-| Network | Detect relevant failed API/resource requests | Inspect relevant 4xx/5xx or stuck requests | Network request list or HAR when needed |
-| Error handling | Confirm unexpected error states are reproducible | Observe UI and failed states | Screenshot, finding, annotated evidence |
-| Accessibility smoke | Check practical usability of major controls | Keyboard/focus/label sanity where relevant | Observation and screenshots when useful |
-| Security/privacy smoke | Avoid obvious sensitive exposure | Inspect URL/UI/captured evidence | Redacted notes and screenshots |
+| Area                   | Why It Matters                                   | Planned Validation                          | Planned Evidence                                  |
+| ---------------------- | ------------------------------------------------ | ------------------------------------------- | ------------------------------------------------- |
+| Page load              | Ensure page reaches a usable state               | Open URL and wait for stable content        | Final URL, title, raw screenshot                  |
+| Main flow              | Validate requested user path                     | Execute provided steps or smoke journey     | Step screenshots and observations                 |
+| UI/Visual              | Detect layout, clipping, or visible error states | Desktop/mobile visual check when applicable | Raw screenshots; annotated screenshots for issues |
+| Network                | Detect relevant failed API/resource requests     | Inspect relevant 4xx/5xx or stuck requests  | Network request list or HAR when needed           |
+| Error handling         | Confirm unexpected error states are reproducible | Observe UI and failed states                | Screenshot, finding, annotated evidence           |
+| Accessibility smoke    | Check practical usability of major controls      | Keyboard/focus/label sanity where relevant  | Observation and screenshots when useful           |
+| Security/privacy smoke | Avoid obvious sensitive exposure                 | Inspect URL/UI/captured evidence            | Redacted notes and screenshots                    |
 
 ## Requirement and Risk Traceability
 
 Map every applicable requirement, test step, and material risk to planned validation and evidence.
 
-| ID | Requirement / Risk | Expected Result or Control | Planned Validation | Planned Evidence | Priority |
-| --- | --- | --- | --- | --- | --- |
-| R-01 | <requirement or risk> | <expected/control> | <how to validate> | <screenshot/network/timing/report note> | High/Medium/Low |
+| ID   | Requirement / Risk    | Expected Result or Control | Planned Validation | Planned Evidence                         | Priority        |
+| ---- | --------------------- | -------------------------- | ------------------ | ---------------------------------------- | --------------- |
+| R-01 | <requirement or risk> | \<expected/control>        | <how to validate>  | \<screenshot/network/timing/report note> | High/Medium/Low |
 
 ## Planned Checks
 
 Use this table for test cases or journeys.
 
-| ID | Step / Requirement | Expected Result | Planned Validation | Evidence Needed | Result Criteria |
-| --- | --- | --- | --- | --- | --- |
-| TC-01 | <action or requirement> | <expected> | <how to validate> | <screenshot/network/notes> | PASS if <condition>; FAIL if <condition>; BLOCKED if <condition> |
+| ID    | Step / Requirement      | Expected Result | Planned Validation | Evidence Needed             | Result Criteria                                                  |
+| ----- | ----------------------- | --------------- | ------------------ | --------------------------- | ---------------------------------------------------------------- |
+| TC-01 | <action or requirement> | <expected>      | <how to validate>  | \<screenshot/network/notes> | PASS if <condition>; FAIL if <condition>; BLOCKED if <condition> |
 
 For URL-only smoke checks, use this checklist.
 
-| Check | Expected | Planned Evidence |
-| --- | --- | --- |
-| Page loads | URL loads without browser-level error | Final URL, title, screenshot |
-| Main content | Primary content is visible | Screenshot and observation |
-| Navigation | Header/menu/primary links are usable | Step notes and screenshots |
-| Primary CTA | Main call-to-action is discoverable and works safely | Step notes and screenshots |
-| Layout desktop | No obvious broken layout at desktop viewport | Desktop screenshot |
-| Layout mobile | No obvious broken layout at mobile viewport when applicable | Mobile screenshot |
-| Forms | Visible forms validate basic required input when applicable | Step notes and screenshots |
-| Network | No relevant failed XHR/fetch requests | Network request summary or HAR |
-| Performance smoke | Page becomes usable without excessive waiting or infinite loading | Timing notes |
-| Accessibility smoke | Keyboard focus and labels are usable for major controls | Observation |
-| Security/privacy smoke | No obvious sensitive data exposure in URL, UI, or evidence | Redacted observation |
-| State persistence | Refresh/session behavior is sane for the checked flow when applicable | Step notes |
-| Error states | No unexpected user-facing error state | Screenshot and observation |
+| Check                  | Expected                                                              | Planned Evidence               |
+| ---------------------- | --------------------------------------------------------------------- | ------------------------------ |
+| Page loads             | URL loads without browser-level error                                 | Final URL, title, screenshot   |
+| Main content           | Primary content is visible                                            | Screenshot and observation     |
+| Navigation             | Header/menu/primary links are usable                                  | Step notes and screenshots     |
+| Primary CTA            | Main call-to-action is discoverable and works safely                  | Step notes and screenshots     |
+| Layout desktop         | No obvious broken layout at desktop viewport                          | Desktop screenshot             |
+| Layout mobile          | No obvious broken layout at mobile viewport when applicable           | Mobile screenshot              |
+| Forms                  | Visible forms validate basic required input when applicable           | Step notes and screenshots     |
+| Network                | No relevant failed XHR/fetch requests                                 | Network request summary or HAR |
+| Performance smoke      | Page becomes usable without excessive waiting or infinite loading     | Timing notes                   |
+| Accessibility smoke    | Keyboard focus and labels are usable for major controls               | Observation                    |
+| Security/privacy smoke | No obvious sensitive data exposure in URL, UI, or evidence            | Redacted observation           |
+| State persistence      | Refresh/session behavior is sane for the checked flow when applicable | Step notes                     |
+| Error states           | No unexpected user-facing error state                                 | Screenshot and observation     |
 
 ## Planned Result Classification
 
@@ -116,14 +116,14 @@ For URL-only smoke checks, use this checklist.
 
 Mark planning or execution as blocked if any required item is unavailable.
 
-| Blocker | Status | Resolution Needed |
-| --- | --- | --- |
-| URL missing or unreachable | yes/no | <needed action> |
-| Authentication required but unavailable | yes/no | <needed action> |
-| Test case file unreadable | yes/no | <needed action> |
-| Expected result ambiguous | yes/no | <needed action> |
-| Destructive action unapproved | yes/no | <needed action> |
-| Required environment/data/dependency unavailable | yes/no | <needed action> |
+| Blocker                                          | Status | Resolution Needed |
+| ------------------------------------------------ | ------ | ----------------- |
+| URL missing or unreachable                       | yes/no | <needed action>   |
+| Authentication required but unavailable          | yes/no | <needed action>   |
+| Test case file unreadable                        | yes/no | <needed action>   |
+| Expected result ambiguous                        | yes/no | <needed action>   |
+| Destructive action unapproved                    | yes/no | <needed action>   |
+| Required environment/data/dependency unavailable | yes/no | <needed action>   |
 
 ## Risks, Assumptions, and Blockers
 
@@ -139,3 +139,4 @@ Mark planning or execution as blocked if any required item is unavailable.
 - Approval Needed From: user
 - Execution Instruction: After approval, execute this plan using `browser-quality-check` and produce a completed report with evidence and annotated screenshots for findings.
 - Handoff Rule: executor must not reinterpret scope, add unplanned coverage, or perform destructive actions without explicit approval. Unplanned observations must be reported separately as out-of-scope unless approved.
+
