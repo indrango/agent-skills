@@ -10,6 +10,7 @@ The skills live under [`personal/`](personal/):
 |---|---|
 | `browser-quality-plan` | Generates approval-ready browser QA execution plans before headed browser testing |
 | `browser-quality-check` | Executes approved browser QA plans in a headed browser with evidence-backed reports |
+| `markdown-to-pdf-generator` | Converts Markdown documents into styled PDF files using the shared Python converter |
 | `commit-session` | Reviews current session changes, helps prepare branch and commit flow |
 | `create-plan` | Writes structured execution plans as Markdown artifacts |
 | `quality-assurance` | Builds QA plans and QA reports against approved specs |
@@ -26,6 +27,9 @@ personal/
   browser-quality-plan/
     SKILL.md
     plan-template.md
+  markdown-to-pdf-generator/
+    SKILL.md
+    generate-pdf.py
   commit-session/
     SKILL.md
   create-plan/
@@ -55,6 +59,7 @@ Examples:
 
 - "Use `browser-quality-plan` to plan QA for this page"
 - "Use `browser-quality-check` to run the approved QA plan"
+- "Use `markdown-to-pdf-generator` to export this Markdown file as PDF"
 - "Use `spec-generator` to create a spec for this feature"
 - "Use `spec-executor` to implement the approved spec"
 - "Use `quality-assurance` to validate this completed spec"
@@ -65,6 +70,7 @@ Examples:
 
 - `browser-quality-check` includes `report-template.md` for evidence-backed QA reports.
 - `browser-quality-plan` includes `plan-template.md` for structured QA planning.
+- `markdown-to-pdf-generator` includes `generate-pdf.py` for styled Markdown-to-PDF conversion with WeasyPrint.
 - `spec-generator` includes reusable templates under `personal/spec-generator/templates/`.
 - Each skill is plain Markdown, so it can be reviewed and edited easily.
 - This repo is intended to version the skill definitions themselves, not the output artifacts they generate.
